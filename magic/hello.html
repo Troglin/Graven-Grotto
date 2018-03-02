@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>Hello?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<style>
+		
+		html { height: 98%; width: 98%; box-sizing: border-box;}
+	
+		body { height: 100%; width: 100%; box-sizing: border-box;}
+		
+		#color { box-sizing: border-box; height: 65%; width: 70%; margin: 5% 15%; border: none;
+			
+			font-size: 20vw; font-family: Arial Black, Helvetica, sans-serif;}
+		
+		#rainbow { display: flex; border: none;
+			
+			position: fixed; height: 5%; width: 90%; bottom: 5%;
+			
+			margin: 5%; font-size: 1.5em; font-family: Arial Black, Helvetica, sans-serif;}
+		
+		span {
+			display: none; float: left; color: lightgray; flex-grow: 1;
+		}
+		
+		#hue18 {background-color: hsl(18, 50%, 50%) ;}
+		#hue36 {background-color: hsl(36, 50%, 50%) ;}
+		#hue54 {background-color: hsl(54, 50%, 50%) ;}
+		#hue72 {background-color: hsl(72, 50%, 50%) ;}
+		#hue90 {background-color: hsl(90, 50%, 50%) ;}
+		#hue108 {background-color: hsl(108, 50%, 50%) ;}
+		#hue126 {background-color: hsl(126, 50%, 50%) ;}
+		#hue144 {background-color: hsl(144, 50%, 50%) ;}
+		#hue162 {background-color: hsl(162, 50%, 50%) ;}
+		#hue180 {background-color: hsl(180, 50%, 50%) ;}
+		#hue198 {background-color: hsl(198, 50%, 50%) ;}
+		#hue216 {background-color: hsl(216, 50%, 50%) ;}
+		#hue234 {background-color: hsl(234, 50%, 50%) ;}
+		#hue252 {background-color: hsl(252, 50%, 50%) ;}
+		#hue270 {background-color: hsl(270, 50%, 50%) ;}
+		#hue288 {background-color: hsl(288, 50%, 50%) ;}
+		#hue306 {background-color: hsl(306, 50%, 50%) ;}
+		#hue324 {background-color: hsl(324, 50%, 50%) ;}
+		#hue342 {background-color: hsl(342, 50%, 50%) ;}
+		#hue0 {background-color: hsl(0, 50%, 50%) ;}
+		
+	</style>
+  
+	<script>
+		
+	var hue = 0;
+	var piss_unlocked = false;
+	
+	function poop() {
+		
+		document.getElementById("color").style.color = "hsl(" + hue + ", 60%, 30%)";
+		document.getElementById("color").style.backgroundColor = "hsl(" + (hue - 10 ) + ", 20%, 80%)";
+		
+		document.getElementById("color").style.borderColor = "hsl(" + (hue - 20 ) + ", 10%, 50%)";
+		document.getElementById("color").style.outlineColor = "hsl(" + (hue - 30 ) + ", 10%, 60%)";
+		
+		document.body.style.backgroundColor = "hsl(" + (hue - 40 ) + ", 20%, 90%)";
+		
+		hue += 2;
+		
+		if (hue > 359) { hue = 0; piss_unlocked = true;}
+		
+		document.getElementById(("hue" + hue)).style.display = "block"
+		
+	}
+		
+		function piss () {
+			
+			if (piss_unlocked == true){
+				
+				document.getElementById("color").innerHTML = "yeah";
+				
+				document.getElementById("color").style.border = ".1em solid";
+				document.getElementById("color").style.outline = ".1em solid";
+				
+				setInterval(poop,100);
+				
+			}
+			
+		}
+	
+	</script>
+	
+	
+<body>
+	
+	<button id="rainbow" onclick="piss()">
+		
+		<span id="hue18">W</span>
+		<span id="hue36">o</span>
+		<span id="hue54">u</span>
+		<span id="hue72">l</span>
+		<span id="hue90">d</span>
+		<span id="hue108">Y</span>
+		<span id="hue126">o</span>
+		<span id="hue144">u</span>
+		<span id="hue162">L</span>
+		<span id="hue180">i</span>
+		<span id="hue198">k</span>
+		<span id="hue216">e</span>
+		<span id="hue234">A</span>
+		<span id="hue252">R</span>
+		<span id="hue270">a</span>
+		<span id="hue288">i</span>
+		<span id="hue306">n</span>
+		<span id="hue324">b</span>
+		<span id="hue342">o</span>
+		<span id="hue0">w</span>
+		<span style="display: block; color: black;">?</span>
+		
+	</button>
+	
+	<button id="color" onclick="poop()">Hello</button>
+	
+
+</body>
+</html>
