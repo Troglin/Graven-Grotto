@@ -13,6 +13,7 @@
 		background-color: #021;
 		color: gray;
 		margin: 0;
+		font-weight: bold;
 	}
 	
 	a {
@@ -20,8 +21,8 @@
 		text-align: center;
 		background-color: gray;
 		display: block;
-		border-radius: 0 100000px 100000px 0;
-		padding: .5em 2em;
+		border-radius: 0 3em 3em 0;
+		padding: .5em 3em;
 		margin: .2em 0;
 		text-decoration: none;
 	}
@@ -29,10 +30,10 @@
 	.category {
 		color: gray;
 		background-color: #343;
-		padding: 5px;
-		margin: 10px 0;
+		padding: .2em 0 .2em 1.5em;
+		margin: 3em 0 1em 0;
 		width: 75%;
-		border-radius: 0 100000px 100000px 0;
+		border-radius: 0 3em 3em 0;
 	}
 	
 	#header {
@@ -47,12 +48,12 @@
 	#footer {
 		color: gray;
 		background-color: #232;
-		padding: 5px;
+		padding: .3em 0 .3em 5em;
 		position: absolute;
 		bottom: 1%;
+		width: 100%;
 		letter-spacing: 2vmin;
-		border-left: 5em solid #232;
-		border-right: 5em solid #232;
+		box-sizing: border-box;
 	}
 	
 	.flexy {
@@ -61,11 +62,33 @@
 		align-items: flex-start;
 	}
 	
-	#butt { background-color: #558; color: white; font-family: 'Arial Black', Gadget, sans-serif; }
-	#garbage { background-color: #33a; color: #a33; font-family: Impact; }
-	#change { background-color: black; color: orange; display: none;}
-	#hello { background-color: lightgray; color: black; font-family: Arial Black, Helvetica, sans-serif; }
-	#elpadica { background-color: hsl(220, 20%, 65%); color: hsl(260, 10%, 30%); font-family: "Tahoma"; }
+	#butt {
+		background-color: #558;
+		color: white;
+		font-family: 'Arial Black', Gadget, sans-serif;
+	}
+	
+	#garbage { background-color: #33a;
+		color: #a33;
+		font-family: Impact;
+	}
+	
+	#man { background-color: black;
+		color: orange;
+		font-family: "Courier New", monospace;
+	}
+	
+	#hello {
+		background-color: lightgray;
+		color: black;
+		font-family: 'Arial Black', Gadget, sans-serif;
+	}
+	
+	#elpadica { 
+		background-color: hsl(220, 20%, 65%);
+		color: hsl(260, 10%, 30%);
+		font-family: "Tahoma";
+	}
 
 	
 </style>
@@ -74,30 +97,30 @@
 
 	<h1 id="header">Graven Grotto</h1>
 
-		<div class="category">Gamebooks & Hypertext Literature </div>
+		<div class="category">Hyperlink Literature</div>
 
 		<div class="flexy">
+			
+			<a id="man" href="http://troglin.github.io/Graven-Grotto/magic/man.html/">
+				I am a man.</a>
 	
-			<a id="butt" href="https://troglin.github.io/Golden-Butt/">
+			<a id="butt" href="https://troglin.github.io/magic/goldenbutt.html">
 				Jones N. Forbuts and the Secret of the Golden Butt</a>
 		
-			<a id="garbage" href="https://troglin.github.io/Graven-Grotto/garbageboy.html">
-				garbage boy</a>
-
-			<a id="change" href="http://philome.la/GhostytheGhosty/changeling/play">
-				Changeling</a>
+			<a id="garbage" href="https://troglin.github.io/Graven-Grotto/magic/garbageboy.html">
+				<span style="color:green;">garbage</span> boyy</a>
 			
 		</div>
 
-		<div class="category">Toys, Tools, & Trinkets</div>
+		<div class="category">Webtoys</div>
 	
 		<div class="flexy">
-		
-			<a id="hello" href="https://troglin.github.io/Graven-Grotto/hello.html">
-				Hello?</a>
 			
-			<a id="elpadica" href="https://troglin.github.io/Graven-Grotto/elpadica.html">
+			<a id="elpadica" href="https://troglin.github.io/Graven-Grotto/magic/elpadica.html">
 				Elpadica</a>
+		
+			<a id="hello" href="https://troglin.github.io/Graven-Grotto/magic/hello.html">
+				Hello?</a>
 		
 		</div>
 	
