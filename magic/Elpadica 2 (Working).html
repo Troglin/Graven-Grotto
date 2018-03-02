@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>Elpadica</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <!-- CSS . css . CSS . css . CSS . css . CSS . css . CSS . css . CSS . css . CSS . css . CSS . css -->
+  
+  
+<style>
+	
+	body {
+		background-color: hsl(220, 20%, 65%);
+		color: hsl(260, 10%, 30%);
+		font-family: "Tahoma";
+		font-size: 1.1em;
+		margin: 0%;
+	}
+		
+	button {
+		background-color: hsl(260, 10%, 30%);
+		color: hsl(220, 20%, 65%);
+		
+		display: inline-block;
+		
+		border: .1em inset black;
+		border-radius: .3em;
+		
+		height: 8em;
+		width: 5.5em;
+		padding: .5em;
+		margin: .6em 0;
+		
+    /* This prevents annoying highlighting while clicking. */
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-khtml-user-select: none;
+		-ms-user-select: none;
+	}
+    
+	button:hover {
+		background-color: hsl(260, 10%, 35%);
+		color: hsl(220, 20%, 80%);
+		
+		border: none;
+		
+		box-shadow: 0 .5em 1em 0 rgba(0,0,0,0.2), 0 .5em 1em 0 rgba(0,0,0,0.10);
+	}
+	
+	#shuffle {
+		border: none;
+		
+		outline: .3em solid hsla(260, 10%, 40%, .3);
+		outline-offset: 5px;
+		border-right: .4em solid hsl(260, 10%, 50%);
+		border-bottom: .7em solid hsl(260, 10%, 40%);
+		
+		float: right;
+		
+		margin: 1em 2em 0 0;
+		
+		box-shadow: 0 .5em 1em 0 rgba(0,0,0,0.2), 0 .5em 1em 0 rgba(0,0,0,0.10);
+	
+	}
+		
+	#spread{
+		background-color: hsl(260, 10%, 30%);
+		border-top: .3em double hsl(260, 10%, 30%);
+		border-bottom: .3em double hsl(260, 10%, 30%);
+		border-color: hsl(0, 0%, 0%);
+		
+		outline: .5em double hsl(260, 10%, 40%);
+		outline-offset: .1em;
+		
+		display: flex;
+		flex-flow: column nowrap;
+		
+		width: inherit;
+		padding: 2em .5em;
+		margin: none;
+	}
+	
+	#spread div {
+		display: flex;
+		align-content: nowrap;
+		justify-content: space-evenly;
+		
+		margin: 1em;
+	}
+		
+</style>
+  
+  
+</head> <!-- JS . js . JS . js . JS . js . JS . js . JS . js . JS . js . JS . js . JS . js . JS . js -->
+  
+  
+<script>
+
+var deck = [];
+	
+var courts = ["Fire", "Water", "Earth", "Air", "Light", "Dark"];
+var titles = ["Monarch", "Advisor", "Heir", "Consort",   "Noble", "Gentile", "Leader", "Banker",
+						 "Farmer", "Merchant", "Soldier", "Rogue",   "Worker", "Beggar", "Hunter", "Outlaw"];
+	
+function populate_deck() {
+	for (i = 0; i < courts.length; i++) { 
+		
+    for (j = 0; j < titles.length; j++) { 
+			deck.push(" "+courts[i]+ " Court " + titles[j]);
+			
+		};
+		
+	}
+	shuffle(deck);
+}
+	
+function reshuffle() {
+	[].forEach.call(document.getElementsByClassName("card"), function(x) { //works!
+		x.innerHTML = "Empty";
+		x.style.color = "hsl(220, 20%, 65%)";
+		x.style.backgroundColor = "hsl(260, 10%, 30%)";
+		x.style.boxShadow = "none";
+		x.style.border= ".1em inset black";
+		x.style.borderRadius= ".3em";
+	});
+	deck = [];
+	populate_deck();
+	
+}
+	
+function draw(button){
+
+	if (deck[0] && button.innerHTML == "Empty"){
+		button.innerHTML = deck.pop();
+		
+		button.style.color = "black";
+		button.style.boxShadow = "0 .5em 1em 0 rgba(0,0,0,0.2), 0 .5em 1em 0 rgba(0,0,0,0.10)";
+		button.style.border = "none";
+		
+		var saturation = 20
+		var lightness = 60
+		
+		if (button.innerHTML.includes("Fire Court")) {
+			button.style.backgroundColor = "hsl(335, " + saturation + "%, " + lightness + "%)";
+
+		} else if (button.innerHTML.includes("Water Court")) {
+			button.style.backgroundColor = "hsl(200, " + saturation + "%, " + lightness + "%)";
+
+		} else if (button.innerHTML.includes("Earth Court")) {
+			button.style.backgroundColor = "hsl(20, " + saturation + "%, " + lightness + "%)";
+
+		} else if (button.innerHTML.includes("Air Court")) {
+			button.style.backgroundColor = "hsl(140, " + saturation + "%, " + lightness + "%)";
+
+		} else if (button.innerHTML.includes("Light Court")) {
+			button.style.backgroundColor = "hsl(60, " + saturation + "%, " + lightness + "%)";
+
+		} else if (button.innerHTML.includes("Dark Court")) {
+			button.style.backgroundColor = "hsl(265, " + saturation + "%, " + lightness + "%)";
+
+		}
+		
+	}
+}
+	
+function shuffle(array) {
+  var m = array.length, t, i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+}
+
+</script>
+  
+  
+  <!-- HTML . html . HTML . html . HTML . html . HTML . html . HTML . html . HTML . html . HTML . html -->
+  
+  
+<body onload="populate_deck()">
+	
+	<div style="margin:1em;">
+	<button id="shuffle" onclick="reshuffle()">
+		Shuffle Cards Into Deck
+	</button>
+	<h1>Elpadica</h1>
+	<h3>Elemental Pantheon Divination Cards</h4>
+	<div>Click an empty spot to draw a card.</div>
+	
+	</div>
+	<br>
+	
+	<div id="spread">
+		<div>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+		</div>
+		<div>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+		</div>
+		<div>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+			<button class="card" onclick="draw(this)">Empty</button>
+		</div>
+
+	</div>
+
+  <!-- Attribution Footer -->
+  <div style="position: fixed; bottom: 0; width: 100%; text-align: left;">
+    Troglin 2017
+    Elpadica v2.1.2
+  </div>
+
+</body>
+</html>
