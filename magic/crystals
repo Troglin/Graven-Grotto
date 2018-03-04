@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Bonbon" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Punnet Ended</title>
+</head>
+	
+<style>
+	
+	html {padding: 0; margin:0;}
+	
+	body {
+		background-color: beige;
+		margin: 0;
+		font-family: 'Arbutus Slab', serif;
+	}
+	
+	#title {
+		background-color: hsla(60, 55%, 85%, 1);
+		display: flex;
+		justify-content: space-evenly;
+		padding: 0.1em;
+		font-size: 2em;
+		font-family: 'Bonbon', cursive;
+	}
+	
+	#blurb { margin: 1em; }
+	
+	#inventory {
+		background-color: hsla(60, 55%, 85%, 1);
+		padding: 0.5em;
+		display: flex;
+		flex-flow: row wrap;
+		
+	}
+	
+	#inventory > div {
+		margin: .5em;
+		height: 2em;
+		width: 2em;
+		border-radius: 50%;
+	}
+	
+	.mama {
+		background: radial-gradient(hsl(0, 90%, 70%) 10%, hsl(0, 100%, 50%) 50%, hsl(0, 50%, 30%));
+	}
+	.papa {
+		background: radial-gradient(hsl(240, 90%, 70%) 10%, hsl(240, 100%, 50%) 50%, hsl(240, 50%, 30%));
+	}
+	
+	.gleam {
+		position: relative;
+		top: .1em;
+		left: .8em;
+		height: .8em;
+		width: 1em;
+		border-radius: 50%;
+		background-color: hsla(0, 0%, 100%, .3);
+	}
+	
+	.glimmer {
+		position: relative;
+		top: .19em;
+		left: 1.3em;
+		height: .6em;
+		width: .5em;
+		border-radius: 50%;
+		background-color: hsla(0, 0%, 100%, .3);
+	}
+
+	
+	
+</style>
+
+<script>
+
+	function cloneCrystal (x) {
+		
+		var baby = document.createElement("div");
+		
+		//var content = document.createTextNode("test"); 
+		//baby.appendChild(content);
+		
+		baby.classList.add(x);
+		
+		baby.setAttribute("onclick", "cloneCrystal('" + x + "')");
+		
+		//baby.style = "background-color: white;";
+		
+		var babyGleam = document.createElement("div");
+		var babyGlimmer = document.createElement("div");
+		
+		babyGleam.classList.add("gleam");
+		babyGlimmer.classList.add("glimmer");
+		
+		baby.appendChild(babyGleam);
+		baby.appendChild(babyGlimmer);
+		
+		document.getElementById("inventory").appendChild(baby); 
+		
+	}
+	
+</script>
+
+<body>
+	
+	<div id="title">
+		<span>P</span>
+		<span>u</span>
+		<span>n</span>
+		<span>n</span>
+		<span>e</span>
+		<span>t</span>
+		<span> </span>
+		<span>E</span>
+		<span>n</span>
+		<span>d</span>
+		<span>e</span>
+		<span>d</span>
+	</div>
+	
+	<div id="blurb">
+		<p>There are two ENERGY ENTANGLED PROTO TOROIDAL PERPETUAL MOTION QUASI DIMENSIONAL CRYSTALS here.</p>
+	
+		<p>Looks like they're hungry to populate. ENABLE THEIR DREAMS.</p>
+	</div>
+	
+	<div id="inventory">
+	
+		<div class="mama" onclick="cloneCrystal(this.classList.item(0))">
+			<div class="gleam"></div>
+			<div class="glimmer"></div>
+		</div>
+	
+		<div class="papa" onclick="cloneCrystal(this.classList.item(0))">
+			<div class="gleam">
+			</div><div class="glimmer"></div>
+		</div>
+	
+	</div>
+	
+</body>
+</html>
