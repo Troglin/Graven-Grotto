@@ -78,28 +78,25 @@
 
 	function cloneCrystal (x) {
 		
-		var baby = document.createElement("div");
+		for (i=0; i <2; i++){
 		
-		//var content = document.createTextNode("test"); 
-		//baby.appendChild(content);
-		
-		baby.classList.add(x);
-		
-		baby.setAttribute("onclick", "cloneCrystal('" + x + "')");
-		
-		//baby.style = "background-color: white;";
-		
-		var babyGleam = document.createElement("div");
-		var babyGlimmer = document.createElement("div");
-		
-		babyGleam.classList.add("gleam");
-		babyGlimmer.classList.add("glimmer");
-		
-		baby.appendChild(babyGleam);
-		baby.appendChild(babyGlimmer);
-		
-		document.getElementById("inventory").appendChild(baby); 
-		
+			var baby = document.createElement("div");
+
+			baby.classList.add(x);
+
+			baby.setAttribute("onclick", "cloneCrystal('" + x + "')");
+
+			var babyGleam = document.createElement("div");
+			var babyGlimmer = document.createElement("div");
+
+			babyGleam.classList.add("gleam");
+			babyGlimmer.classList.add("glimmer");
+
+			baby.appendChild(babyGleam);
+			baby.appendChild(babyGlimmer);
+
+			document.getElementById("inventory").appendChild(baby); 
+		}
 	}
 	
 </script>
@@ -125,7 +122,7 @@
 	</div>
 	
 	<div id="blurb">
-		<p>There are two ENERGY ENTANGLED PROTO TOROIDAL PERPETUAL MOTION QUASI DIMENSIONAL CRYSTALS here.</p>
+		<p>There are some ENERGY ENTANGLED PROTO TOROIDAL PERPETUAL MOTION QUASI DIMENSIONAL CRYSTALS here.</p>
 	
 		<p>Looks like they're hungry to populate. ENABLE THEIR DREAMS.</p>
 	</div>
