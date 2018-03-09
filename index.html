@@ -6,15 +6,18 @@
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<title>Graven Grotto</title>
 
-</head>
-
+	</head>
 <style>
+	
+	* {
+		box-sizing: border-box;
+	}
 
 	body {
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-		background-color: #021;
-		color: gray;
-		margin: 0;
+		background-color: hsl(140 10% 70%);
+		color: hsl(140 10% 45%);
+		margin: 0; 
 		font-weight: bold;
 	}
 	
@@ -23,39 +26,57 @@
 		text-align: center;
 		background-color: gray;
 		display: block;
+		width: 70%;
 		border-radius: 0 3em 3em 0;
-		padding: .5em 3em;
-		margin: .2em 0;
+		padding: .3em 0;
+		margin: 0 0 .1em 0;
 		text-decoration: none;
+		border: 1px solid;
+		border-left: none;
+		border-right: none;
+		box-shadow: 0px 1px 1px black;
 	}
 	
 	.category {
-		color: gray;
-		background-color: #343;
+		color: hsl(140 10% 20%);
+		background-color: hsl(140 10% 50%);
 		padding: .2em 0 .2em 1.5em;
-		margin: 3em 0 1em 0;
-		width: 75%;
+		margin: .1em 0 .5em 0;
+		width: 90%;
 		border-radius: 0 3em 3em 0;
+		box-shadow: 0px 1px 5px black;
+	}
+	
+	.subcat {
+		color: hsl(140 10% 35%);
+		margin: 0 0 .3em 0;
+	}
+	
+	.subtitle {
+		color: hsl(140 10% 45%);
+		margin: 0 0 .3em 1em;
 	}
 	
 	#header {
-		color: gray;
-		background-color: #232;
-		padding: 5px;
+		color: hsl(140 10% 20%);
+		background-color: hsl(140 10% 50%);
+		padding: none;
 		margin: none;
 		text-align: center;
 		letter-spacing: 1vmin;
+		box-shadow: 0px 1px 5px black;
 	}
 	
 	#footer {
-		color: gray;
-		background-color: #232;
+		color: hsl(140 10% 20%);
+		background-color: hsl(140 10% 50%);
 		padding: .3em 0 .3em 5em;
 		position: absolute;
 		bottom: 1%;
 		width: 100%;
 		letter-spacing: 2vmin;
 		box-sizing: border-box;
+		box-shadow: 0px 1px 5px black;
 	}
 	
 	.flexy {
@@ -93,7 +114,7 @@
 	}
 	
 	#crystals {
-		background-color: hsla(60, 55%, 85%, 1);
+		background-color: hsl(60 55% 85%);
 		color: black;
 		letter-spacing: 4px;
 		font-family: 'Bonbon', cursive;
@@ -106,41 +127,70 @@
 
 	<h1 id="header">Graven Grotto</h1>
 
-	<div class="category">Hyperlink Literature</div>
-
-	<div class="flexy">
-
-		<a id="man" href="http://troglin.github.io/Graven-Grotto/magic/man.html">
-			I am a man.</a>
-
-		<a id="butt" href="https://troglin.github.io/Graven-Grotto/magic/goldenbutt.html">
-			Jones N. Forbuts and the Secret of the Golden Butt</a>
-
-		<a id="garbage" href="https://troglin.github.io/Graven-Grotto/magic/garbageboy.html">
-			<span style="color:green;">garbage</span> boyy</a>
-
-	</div>
-
-	<div class="category">Webtoys</div>
-
-	<div class="flexy">
-
-		<a id="hello" href="https://troglin.github.io/Graven-Grotto/magic/hello.html">
-			Hello?</a>
-
-	</div>
-
-	<div class="category">Unfinished</div>
-
-	<div class="flexy">
-
-		<a id="elpadica" href="https://troglin.github.io/Graven-Grotto/magic/elpadica.html">
-			Elpadica</a>
+		<div class="category">Hyperlink Literature
+			<p class="subcat">
+				These are done in Twine, which is free and awesome. http://twinery.org/
+			</p>
+		</div>
+	
+		<div class="flexy">
+			
+			<a id="man" href="http://troglin.github.io/Graven-Grotto/magic/man.html/">
+				I am a man.
+			</a>
+			<p class="subtitle">
+					(short) [linear] expandable autobiographical poetry about ftm transtion. first ever twine.
+			</p>
+	
+			<a id="butt" href="https://troglin.github.io/magic/goldenbutt.html">
+				Jones N. Forbuts and the Secret of the Golden Butt
+			</a>
+			<p class="subtitle">
+				(medium-length) [choice-minimal] drunken dadaist comedy about the 2016 election & usa politics
+			</p>
 		
-		<a id="crystals" href="https://troglin.github.io/Graven-Grotto/magic/crystals.html">
-			Crystal Breeder</a>
+			<a id="garbage" href="https://troglin.github.io/Graven-Grotto/magic/garbageboy.html">
+				<span style="color:green;">garbage</span> boyy
+			</a>
+			<p class="subtitle">
+				(short) [choice-minimal] social poetry, dadaist, depressed, minimalist, blinding
+			</p>
+			
+		</div>
 
-	</div>
+	
+		<div class="category">Webtoys</div>
+	
+		<div class="flexy">
+			
+		
+			<a id="hello" href="https://troglin.github.io/Graven-Grotto/magic/hello.html">
+				Hello?</a>
+			<p class="subtitle">
+				minimalist clicker game, digital prize at the end & secret post-game funtion
+			</p>
+		
+		</div>
+	
+
+		<div class="flexy">
+
+			<a id="elpadica" href="https://troglin.github.io/Graven-Grotto/magic/elpadica.html">
+				Elpadica
+			</a>
+			<p class="subtitle">
+				[unfinished] special-paradigm magic divination card deck simulator. info forthcoming
+			</p>
+
+			<a id="crystals" href="https://troglin.github.io/Graven-Grotto/magic/crystals.html">
+				Crystal Breeder
+			</a>
+			<p class="subtitle">
+				[unfinished] shape replicator. DNA forthcoming.
+			</p>
+
+		</div>
+
 
 	<p id="footer">Troglin 2018</p>
 
