@@ -4,7 +4,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Bonbon" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Punnet Ended</title>
+  <title>Crystal Breeder</title>
 </head>
 	
 <style>
@@ -18,7 +18,8 @@
 	}
 	
 	#title {
-		background-color: hsla(60, 55%, 85%, 1);
+		background-color: hsl(60 55% 85%);
+		color: hsl(190 50% 45%);
 		display: flex;
 		justify-content: space-evenly;
 		padding: 0.1em;
@@ -28,8 +29,19 @@
 	
 	#blurb { margin: 1em; }
 	
+	#breeders {
+		display: flex;
+		background-color: hsl(60 55% 85%);
+	}
+	
+	#breeders > div {
+		border: 1px solid beige;
+		padding: 1em;
+		margin: 1em;
+	}
+	
 	#inventory {
-		background-color: hsla(60, 55%, 85%, 1);
+		background-color: hsl(60 55% 85%);
 		padding: 0.5em;
 		display: flex;
 		flex-flow: row wrap;
@@ -126,6 +138,16 @@
 	
 		<p>Looks like they're hungry to populate. ENABLE THEIR DREAMS.</p>
 	</div>
+	
+	<!--div id="breeders">
+		
+		<div id="firstcancel">cancel</div>
+		<div id="first"></div>
+		<div id="breed">breed</div>
+		<div id="second"></div>
+		<div id="secondcancel">cancel</div>
+		
+	</div-->
 	
 	<div id="inventory">
 	
