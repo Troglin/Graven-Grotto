@@ -30,6 +30,7 @@
 	#blurb { margin: 1em; }
 	
 	#breeders {
+		margin: auto;
 		display: flex;
 		background-color: hsl(60 55% 85%);
 	}
@@ -87,6 +88,28 @@
 </style>
 
 <script>
+	
+	var first = false
+	var second = false
+	
+	// copy parent into breeding section
+	
+	/* function selectForBreeding () {
+		
+		if (first == false) {
+			
+			
+			
+			first = true;
+			
+		} elseif (second == false){
+			
+			second = true;
+		}
+		
+	} */
+	
+	// also make functions for clearing the parents, and breeding the children
 
 	function cloneCrystal (x) {
 		
@@ -141,11 +164,9 @@
 	
 	<!--div id="breeders">
 		
-		<div id="firstcancel">cancel</div>
 		<div id="first"></div>
 		<div id="breed">breed</div>
 		<div id="second"></div>
-		<div id="secondcancel">cancel</div>
 		
 	</div-->
 	
