@@ -11,6 +11,8 @@
   
   
 <style>
+  
+    * { box-sizing: border-box; }
 	
 	body {
 		background-color: hsl(220, 20%, 65%);
@@ -90,6 +92,44 @@
 		
 		margin: 1em;
 	}
+  
+    #book {
+        display: none;
+        position: absolute;
+        top: 2%;
+        left: 2%;
+        width: 96%;
+        height: 96%;
+    }
+  
+    #pages {
+        display: flex;
+        height: inherit;
+    }
+  
+    #page1, #page2 {
+        background-color: hsl(240, 10%, 55%);
+        flex-grow: 1;
+        border-radius: 1%;
+        border: .1em solid hsl(240, 10%, 10%);
+        box-shadow: 0 0 2em .01em hsl(240, 20%, 20%), 0 0 1em .1em hsl(240, 10%, 40%) inset;
+        border-radius: 100%/4%;
+        padding: 2em;
+        flex-basis: 0
+    }
+  
+    #bookmark {
+        height: 2em;
+        text-align: center;
+        text-shadow: 0 0 2em white, 0 0 1.5em white, 0 0 1em white, 0 0 .5em white, 0 0 .4em white;
+    }
+  
+    #deck {
+        text-align: left;
+        width: 100%;
+    }
+  
+  
 		
 </style>
   
@@ -183,6 +223,21 @@ function shuffle(array) {
 
   return array;
 }
+  
+function sort_deck(){
+  	for (i = 0; i < courts.length; i++) { 
+		
+    for (j = 0; j < titles.length; j++) { 
+			deck.push(" "+courts[i]+ " Court " + titles[j]);
+			
+		};
+		
+	}
+}
+  
+function open_book() { document.getElementById('book').style.display='block'; }
+  
+function close_book() { document.getElementById('book').style.display='none'; }
 
 </script>
   
@@ -192,14 +247,14 @@ function shuffle(array) {
   
 <body onload="populate_deck()">
 	
-	<div style="margin:1em;">
+	<div id="top" style="margin:1em;">
 	<button id="shuffle" onclick="reshuffle()">
 		Shuffle Cards Into Deck
 	</button>
-	<h1>Elpadica</h1>
-	<h3>Elemental Pantheon Divination Cards</h4>
-	<div>Click an empty spot to draw a card.</div>
-	
+      <h1>Elpadica</h1>
+      <h3>Elemental Pantheon Divination Cards</h3>
+	  Click an empty spot to draw a card.
+      <div onclick="open_book()">Open Book</div>
 	</div>
 	<br>
 	
@@ -231,13 +286,49 @@ function shuffle(array) {
 			<button class="card" onclick="draw(this)">Empty</button>
 			<button class="card" onclick="draw(this)">Empty</button>
 		</div>
-
 	</div>
+  
+    <div id="book">
+        <div id="bookmark" onclick="close_book()">Close Book</div>
+        <div id="pages">
+            <div id="page1">
+                Deck
+                <!--table id="deck">
+                    <tr>
+                      <th>#</th>
+                      <th>Fire</th>
+                      <th>Water</th>
+                      <th>Earth</th>
+                      <th>Air</th>
+                      <th>Light</th>
+                      <th>Dark</th>
+                    </tr>
+                    <tr>
+                      <td >Monarch</td>
+                      <td id="f1" ></td>
+                      <td id="w1" ></td>
+                      <td id="e1" ></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td></td>
+                        <td>94</td>
+                    </tr>
+                </table --> 
+
+            </div>
+          
+            <div id="page2">
+                Lore
+
+            </div>
+        </div>
+    </div>
 
   <!-- Attribution Footer -->
   <div style="position: fixed; bottom: 0; width: 100%; text-align: left;">
-    Troglin 2017
-    Elpadica v2.1.2
+    Troglin 2018
+    Elpadica (beta version)
   </div>
 
 </body>
