@@ -9,10 +9,12 @@
 	</head>
 <style>
 	
+	
 	@font-face {
     font-family: "Crux";
     src: url(https://troglin.github.io/Graven-Grotto/coders_crux.ttf) format("truetype");
 	}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 	
 	* {
 		box-sizing: border-box;
@@ -20,7 +22,7 @@
 	}
 
 	body {
-		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+		font-family: 'Goblin One', cursive;
 		background-color: hsl(140 10% 70%);
 		color: hsl(140 10% 45%);
 		margin: 0; 
@@ -33,14 +35,14 @@
 		background-color: gray;
 		display: block;
 		width: none;
-		border-radius: 0 3em 3em 0;
-		padding: .3em 4em;
-		margin: 0 .5em .1em 0;
+		border-radius: 0 .5em 3em 0;
+		padding: .6em 7em;
+		margin: 0 .5em .3em 0;
 		text-decoration: none;
-		border: 1px solid;
+		border: 2px solid;
 		border-left: none;
 		border-right: none;
-		box-shadow: 0px 1px 1px black;
+		box-shadow: -10px 10px 10px hsla(200,30%,20%,40%);
 	}
 	
 	.category {
@@ -54,13 +56,13 @@
 	}
 	
 	.subcat {
-		color: hsl(140 10% 35%);
+		color: hsl(140 10% 25%);
 		margin: 0 0 .3em 0;
 	}
 	
 	.subtitle {
-		color: hsl(140 10% 45%);
-		margin: 0 0 .3em 1em;
+		color: hsl(140 10% 30%);
+		margin: 0 0 .8em 1em;
 	}
 	
 	#header {
@@ -99,12 +101,14 @@
 		font-family: 'Arial Black', Gadget, sans-serif;
 	}
 	
-	#garbage { background-color: #33a;
+	#garbage {
+    background-color: #33a;
 		color: #a33;
 		font-family: Impact;
 	}
 	
-	#man { background-color: black;
+	#man {
+    background-color: black;
 		color: orange;
 		font-family: "Courier New", monospace;
 	}
@@ -134,6 +138,12 @@
 		font-family: 'Bonbon', cursive;
 	}
 
+	#weed { 
+		background-color: hsl(210, 20%, 15%);
+		color: #ff9;
+		font-family: 'Roboto Slab', serif;
+	}
+
 	
 </style>
 
@@ -141,7 +151,7 @@
 
 	<h1 id="header">Graven Grotto</h1>
 
-		<div class="category">Bookshelf <span class="subcat">made with http://twinery.org/</span></div>
+		<div class="category">Bookshelf <span class="subcat">- storygames made with Twine (twinery.org)</span></div>
 	
 		<div class="flexy">
 			
@@ -156,7 +166,7 @@
 				Jones N. Forbuts and the Secret of the Golden Butt
 			</a>
 			<p class="subtitle">
-				(medium-length) [choice-minimal] drunken dadaist comedy about the 2016 election & usa politics
+				(medium-length) [choice-minimal] collab with nife: drunken dadaist comedy about the 2016 election & usa politics
 			</p>
 		
 			<a id="garbage" href="https://troglin.github.io/Graven-Grotto/magic/garbageboy.html">
@@ -165,11 +175,18 @@
 			<p class="subtitle">
 				(short) [choice-minimal] social poetry, dadaist, depressed, minimalist, blinding
 			</p>
+      
+  			<a id="weed" href="https://troglin.github.io/Graven-Grotto/magic/crystals.html">
+				JUNK WEED
+			</a>
+			<p class="subtitle">
+				2020 (short) [linear] collab with nife: anthropomorphic comedy
+			</p>
 			
 		</div>
 
 	
-		<div class="category">Toybox <span class="subcat">html/js games & widgets</span></div>
+		<div class="category">Toybox <span class="subcat">- html/js games & widgets</span></div>
 	
 		<div class="flexy">
 			
@@ -197,13 +214,14 @@
 				Crystal Breeder
 			</a>
 			<p class="subtitle">
-				[unfinished] shape replicator game. DNA forthcoming.
+				[unfinished] shape clone toy.
 			</p>
 
 		</div>
 
 
-	<p id="footer">Troglin 2018</p>
+	<p id="footer">Troglin 2020</p>
+
 
 </body>
 </html>
